@@ -1,0 +1,1236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище GARModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AS_ADDHOUSE_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="OBJECTGUID" Type="nvarchar" MaxLength="36" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="TYPENAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="LEVEL" Type="nvarchar" MaxLength="10" />
+          <Property Name="OPERTYPEID" Type="nvarchar" MaxLength="2" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTUAL" Type="smallint" />
+          <Property Name="ISACTIVE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ_DIVISION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="PARENTID" Type="int" />
+          <Property Name="CHILDID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="CHANGEIDEND" Type="int" />
+          <Property Name="TYPEID" Type="smallint" />
+          <Property Name="VALUE" Type="nvarchar(max)" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="LEVEL" Type="nvarchar" MaxLength="10" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_ADM_HIERARCHY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="PARENTOBJID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="REGIONCODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="AREACODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="CITYCODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="PLACECODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="PLANCODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="STREETCODE" Type="nvarchar" MaxLength="4" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="smallint" />
+          <Property Name="PATH" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AS_APARTMENT_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_APARTMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="OBJECTGUID" Type="nvarchar" MaxLength="36" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="NUMBER" Type="nvarchar" MaxLength="50" />
+          <Property Name="APARTTYPE" Type="smallint" />
+          <Property Name="OPERTYPEID" Type="smallint" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTUAL" Type="smallint" />
+          <Property Name="ISACTIVE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AS_APARTMENTS_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="CHANGEIDEND" Type="int" />
+          <Property Name="TYPEID" Type="smallint" />
+          <Property Name="VALUE" Type="nvarchar(max)" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_CARPLACES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="OBJECTGUID" Type="nvarchar" MaxLength="36" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="NUMBER" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPERTYPEID" Type="smallint" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTUAL" Type="smallint" />
+          <Property Name="ISACTIVE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AS_CARPLACES_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="CHANGEIDEND" Type="int" />
+          <Property Name="TYPEID" Type="smallint" />
+          <Property Name="VALUE" Type="nvarchar(max)" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_HOUSE_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_HOUSES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="OBJECTGUID" Type="nvarchar" MaxLength="36" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="HOUSENUM" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADDNUM1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADDNUM2" Type="nvarchar" MaxLength="50" />
+          <Property Name="HOUSETYPE" Type="smallint" />
+          <Property Name="ADDTYPE1" Type="smallint" />
+          <Property Name="ADDTYPE2" Type="smallint" />
+          <Property Name="OPERTYPEID" Type="smallint" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTUAL" Type="smallint" />
+          <Property Name="ISACTIVE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AS_HOUSES_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="CHANGEIDEND" Type="int" />
+          <Property Name="TYPEID" Type="smallint" />
+          <Property Name="VALUE" Type="nvarchar(max)" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_MUN_HIERARCHY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="PARENTOBJID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="OKTMO" Type="nvarchar" MaxLength="11" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="smallint" />
+          <Property Name="PATH" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AS_NORMATIVE_DOCS_KINDS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="AS_NORMATIVE_DOCS_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_OBJECT_LEVELS">
+          <Key>
+            <PropertyRef Name="LEVEL" />
+          </Key>
+          <Property Name="LEVEL" Type="smallint" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_OPERATION_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_PARAM_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="120" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_ROOM_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="SHORTNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTIVE" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AS_ROOMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="OBJECTGUID" Type="nvarchar" MaxLength="36" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="NUMBER" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROOMTYPE" Type="smallint" />
+          <Property Name="OPERTYPEID" Type="smallint" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTUAL" Type="smallint" />
+          <Property Name="ISACTIVE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AS_ROOMS_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="CHANGEIDEND" Type="int" />
+          <Property Name="TYPEID" Type="smallint" />
+          <Property Name="VALUE" Type="nvarchar(max)" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="AS_STEADS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="OBJECTGUID" Type="nvarchar" MaxLength="36" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="NUMBER" Type="nvarchar" MaxLength="250" />
+          <Property Name="OPERTYPEID" Type="smallint" />
+          <Property Name="PREVID" Type="int" />
+          <Property Name="NEXTID" Type="int" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="ISACTUAL" Type="smallint" />
+          <Property Name="ISACTIVE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AS_STEADS_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OBJECTID" Type="int" />
+          <Property Name="CHANGEID" Type="int" />
+          <Property Name="CHANGEIDEND" Type="int" />
+          <Property Name="TYPEID" Type="smallint" />
+          <Property Name="VALUE" Type="nvarchar(max)" />
+          <Property Name="UPDATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+        </EntityType>
+        <Function Name="GettingAnAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="kadnum" Type="nvarchar" Mode="In" />
+          <Parameter Name="adress" Type="nvarchar(max)" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="Хранилище GARModelContainer">
+          <EntitySet Name="AS_ADDHOUSE_TYPES" EntityType="Self.AS_ADDHOUSE_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ADDR_OBJ" EntityType="Self.AS_ADDR_OBJ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ADDR_OBJ_DIVISION" EntityType="Self.AS_ADDR_OBJ_DIVISION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ADDR_OBJ_PARAMS" EntityType="Self.AS_ADDR_OBJ_PARAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ADDR_OBJ_TYPES" EntityType="Self.AS_ADDR_OBJ_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ADM_HIERARCHY" EntityType="Self.AS_ADM_HIERARCHY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_APARTMENT_TYPES" EntityType="Self.AS_APARTMENT_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_APARTMENTS" EntityType="Self.AS_APARTMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_APARTMENTS_PARAMS" EntityType="Self.AS_APARTMENTS_PARAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_CARPLACES" EntityType="Self.AS_CARPLACES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_CARPLACES_PARAMS" EntityType="Self.AS_CARPLACES_PARAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_HOUSE_TYPES" EntityType="Self.AS_HOUSE_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_HOUSES" EntityType="Self.AS_HOUSES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_HOUSES_PARAMS" EntityType="Self.AS_HOUSES_PARAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_MUN_HIERARCHY" EntityType="Self.AS_MUN_HIERARCHY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_NORMATIVE_DOCS_KINDS" EntityType="Self.AS_NORMATIVE_DOCS_KINDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_NORMATIVE_DOCS_TYPES" EntityType="Self.AS_NORMATIVE_DOCS_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_OBJECT_LEVELS" EntityType="Self.AS_OBJECT_LEVELS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_OPERATION_TYPES" EntityType="Self.AS_OPERATION_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_PARAM_TYPES" EntityType="Self.AS_PARAM_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ROOM_TYPES" EntityType="Self.AS_ROOM_TYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ROOMS" EntityType="Self.AS_ROOMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_ROOMS_PARAMS" EntityType="Self.AS_ROOMS_PARAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_STEADS" EntityType="Self.AS_STEADS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AS_STEADS_PARAMS" EntityType="Self.AS_STEADS_PARAMS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AS_ADDR_OBJ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="OBJECTGUID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TYPENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LEVEL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OPERTYPEID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTUAL" Type="Int16" />
+          <Property Name="ISACTIVE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ_DIVISION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PARENTID" Type="Int32" />
+          <Property Name="CHILDID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="CHANGEIDEND" Type="Int32" />
+          <Property Name="TYPEID" Type="Int16" />
+          <Property Name="VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AS_ADDR_OBJ_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="LEVEL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_ADM_HIERARCHY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="PARENTOBJID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="REGIONCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="AREACODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CITYCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PLACECODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PLANCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="STREETCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="Int16" />
+          <Property Name="PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_APARTMENT_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_APARTMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="OBJECTGUID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APARTTYPE" Type="Int16" />
+          <Property Name="OPERTYPEID" Type="Int16" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTUAL" Type="Int16" />
+          <Property Name="ISACTIVE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="AS_APARTMENTS_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="CHANGEIDEND" Type="Int32" />
+          <Property Name="TYPEID" Type="Int16" />
+          <Property Name="VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AS_CARPLACES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="OBJECTGUID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPERTYPEID" Type="Int16" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTUAL" Type="Int16" />
+          <Property Name="ISACTIVE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="AS_CARPLACES_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="CHANGEIDEND" Type="Int32" />
+          <Property Name="TYPEID" Type="Int16" />
+          <Property Name="VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AS_HOUSE_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_HOUSES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="OBJECTGUID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="HOUSENUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADDNUM1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADDNUM2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOUSETYPE" Type="Int16" />
+          <Property Name="ADDTYPE1" Type="Int16" />
+          <Property Name="ADDTYPE2" Type="Int16" />
+          <Property Name="OPERTYPEID" Type="Int16" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTUAL" Type="Int16" />
+          <Property Name="ISACTIVE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="AS_HOUSES_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="CHANGEIDEND" Type="Int32" />
+          <Property Name="TYPEID" Type="Int16" />
+          <Property Name="VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AS_MUN_HIERARCHY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="PARENTOBJID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="OKTMO" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="Int16" />
+          <Property Name="PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_NORMATIVE_DOCS_KINDS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_NORMATIVE_DOCS_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AS_OBJECT_LEVELS">
+          <Key>
+            <PropertyRef Name="LEVEL" />
+          </Key>
+          <Property Name="LEVEL" Type="Int16" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_OPERATION_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_PARAM_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AS_ROOM_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AS_ROOMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="OBJECTGUID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROOMTYPE" Type="Int16" />
+          <Property Name="OPERTYPEID" Type="Int16" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTUAL" Type="Int16" />
+          <Property Name="ISACTIVE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="AS_ROOMS_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="CHANGEIDEND" Type="Int32" />
+          <Property Name="TYPEID" Type="Int16" />
+          <Property Name="VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="AS_STEADS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="OBJECTGUID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="NUMBER" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OPERTYPEID" Type="Int16" />
+          <Property Name="PREVID" Type="Int32" />
+          <Property Name="NEXTID" Type="Int32" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="ISACTUAL" Type="Int16" />
+          <Property Name="ISACTIVE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="AS_STEADS_PARAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OBJECTID" Type="Int32" />
+          <Property Name="CHANGEID" Type="Int32" />
+          <Property Name="CHANGEIDEND" Type="Int32" />
+          <Property Name="TYPEID" Type="Int16" />
+          <Property Name="VALUE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="DbGARContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AS_ADDR_OBJ" EntityType="Self.AS_ADDR_OBJ" />
+          <EntitySet Name="AS_ADDR_OBJ_DIVISION" EntityType="Self.AS_ADDR_OBJ_DIVISION" />
+          <EntitySet Name="AS_ADDR_OBJ_PARAMS" EntityType="Self.AS_ADDR_OBJ_PARAMS" />
+          <EntitySet Name="AS_ADDR_OBJ_TYPES" EntityType="Self.AS_ADDR_OBJ_TYPES" />
+          <EntitySet Name="AS_ADM_HIERARCHY" EntityType="Self.AS_ADM_HIERARCHY" />
+          <EntitySet Name="AS_APARTMENT_TYPES" EntityType="Self.AS_APARTMENT_TYPES" />
+          <EntitySet Name="AS_APARTMENTS" EntityType="Self.AS_APARTMENTS" />
+          <EntitySet Name="AS_APARTMENTS_PARAMS" EntityType="Self.AS_APARTMENTS_PARAMS" />
+          <EntitySet Name="AS_CARPLACES" EntityType="Self.AS_CARPLACES" />
+          <EntitySet Name="AS_CARPLACES_PARAMS" EntityType="Self.AS_CARPLACES_PARAMS" />
+          <EntitySet Name="AS_HOUSE_TYPES" EntityType="Self.AS_HOUSE_TYPES" />
+          <EntitySet Name="AS_HOUSES" EntityType="Self.AS_HOUSES" />
+          <EntitySet Name="AS_HOUSES_PARAMS" EntityType="Self.AS_HOUSES_PARAMS" />
+          <EntitySet Name="AS_MUN_HIERARCHY" EntityType="Self.AS_MUN_HIERARCHY" />
+          <EntitySet Name="AS_NORMATIVE_DOCS_KINDS" EntityType="Self.AS_NORMATIVE_DOCS_KINDS" />
+          <EntitySet Name="AS_NORMATIVE_DOCS_TYPES" EntityType="Self.AS_NORMATIVE_DOCS_TYPES" />
+          <EntitySet Name="AS_OBJECT_LEVELS" EntityType="Self.AS_OBJECT_LEVELS" />
+          <EntitySet Name="AS_OPERATION_TYPES" EntityType="Self.AS_OPERATION_TYPES" />
+          <EntitySet Name="AS_PARAM_TYPES" EntityType="Self.AS_PARAM_TYPES" />
+          <EntitySet Name="AS_ROOM_TYPES" EntityType="Self.AS_ROOM_TYPES" />
+          <EntitySet Name="AS_ROOMS" EntityType="Self.AS_ROOMS" />
+          <EntitySet Name="AS_ROOMS_PARAMS" EntityType="Self.AS_ROOMS_PARAMS" />
+          <EntitySet Name="AS_STEADS" EntityType="Self.AS_STEADS" />
+          <EntitySet Name="AS_STEADS_PARAMS" EntityType="Self.AS_STEADS_PARAMS" />
+          <FunctionImport Name="GettingAnAddress">
+            <Parameter Name="kadnum" Mode="In" Type="String" />
+            <Parameter Name="adress" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="AS_ADDHOUSE_TYPES" EntityType="GARModel.AS_ADDHOUSE_TYPES" />
+        </EntityContainer>
+        <EntityType Name="AS_ADDHOUSE_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище GARModelContainer" CdmEntityContainer="DbGARContext">
+          <EntitySetMapping Name="AS_ADDR_OBJ">
+            <EntityTypeMapping TypeName="GARModel.AS_ADDR_OBJ">
+              <MappingFragment StoreEntitySet="AS_ADDR_OBJ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="OBJECTGUID" ColumnName="OBJECTGUID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="TYPENAME" ColumnName="TYPENAME" />
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+                <ScalarProperty Name="OPERTYPEID" ColumnName="OPERTYPEID" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTUAL" ColumnName="ISACTUAL" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ADDR_OBJ_DIVISION">
+            <EntityTypeMapping TypeName="GARModel.AS_ADDR_OBJ_DIVISION">
+              <MappingFragment StoreEntitySet="AS_ADDR_OBJ_DIVISION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                <ScalarProperty Name="CHILDID" ColumnName="CHILDID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ADDR_OBJ_PARAMS">
+            <EntityTypeMapping TypeName="GARModel.AS_ADDR_OBJ_PARAMS">
+              <MappingFragment StoreEntitySet="AS_ADDR_OBJ_PARAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="CHANGEIDEND" ColumnName="CHANGEIDEND" />
+                <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ADDR_OBJ_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_ADDR_OBJ_TYPES">
+              <MappingFragment StoreEntitySet="AS_ADDR_OBJ_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ADM_HIERARCHY">
+            <EntityTypeMapping TypeName="GARModel.AS_ADM_HIERARCHY">
+              <MappingFragment StoreEntitySet="AS_ADM_HIERARCHY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="PARENTOBJID" ColumnName="PARENTOBJID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="REGIONCODE" ColumnName="REGIONCODE" />
+                <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+                <ScalarProperty Name="CITYCODE" ColumnName="CITYCODE" />
+                <ScalarProperty Name="PLACECODE" ColumnName="PLACECODE" />
+                <ScalarProperty Name="PLANCODE" ColumnName="PLANCODE" />
+                <ScalarProperty Name="STREETCODE" ColumnName="STREETCODE" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="PATH" ColumnName="PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_APARTMENT_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_APARTMENT_TYPES">
+              <MappingFragment StoreEntitySet="AS_APARTMENT_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_APARTMENTS">
+            <EntityTypeMapping TypeName="GARModel.AS_APARTMENTS">
+              <MappingFragment StoreEntitySet="AS_APARTMENTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="OBJECTGUID" ColumnName="OBJECTGUID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="APARTTYPE" ColumnName="APARTTYPE" />
+                <ScalarProperty Name="OPERTYPEID" ColumnName="OPERTYPEID" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTUAL" ColumnName="ISACTUAL" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_APARTMENTS_PARAMS">
+            <EntityTypeMapping TypeName="GARModel.AS_APARTMENTS_PARAMS">
+              <MappingFragment StoreEntitySet="AS_APARTMENTS_PARAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="CHANGEIDEND" ColumnName="CHANGEIDEND" />
+                <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_CARPLACES">
+            <EntityTypeMapping TypeName="GARModel.AS_CARPLACES">
+              <MappingFragment StoreEntitySet="AS_CARPLACES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="OBJECTGUID" ColumnName="OBJECTGUID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="OPERTYPEID" ColumnName="OPERTYPEID" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTUAL" ColumnName="ISACTUAL" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_CARPLACES_PARAMS">
+            <EntityTypeMapping TypeName="GARModel.AS_CARPLACES_PARAMS">
+              <MappingFragment StoreEntitySet="AS_CARPLACES_PARAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="CHANGEIDEND" ColumnName="CHANGEIDEND" />
+                <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_HOUSE_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_HOUSE_TYPES">
+              <MappingFragment StoreEntitySet="AS_HOUSE_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_HOUSES">
+            <EntityTypeMapping TypeName="GARModel.AS_HOUSES">
+              <MappingFragment StoreEntitySet="AS_HOUSES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="OBJECTGUID" ColumnName="OBJECTGUID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="HOUSENUM" ColumnName="HOUSENUM" />
+                <ScalarProperty Name="ADDNUM1" ColumnName="ADDNUM1" />
+                <ScalarProperty Name="ADDNUM2" ColumnName="ADDNUM2" />
+                <ScalarProperty Name="HOUSETYPE" ColumnName="HOUSETYPE" />
+                <ScalarProperty Name="ADDTYPE1" ColumnName="ADDTYPE1" />
+                <ScalarProperty Name="ADDTYPE2" ColumnName="ADDTYPE2" />
+                <ScalarProperty Name="OPERTYPEID" ColumnName="OPERTYPEID" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTUAL" ColumnName="ISACTUAL" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_HOUSES_PARAMS">
+            <EntityTypeMapping TypeName="GARModel.AS_HOUSES_PARAMS">
+              <MappingFragment StoreEntitySet="AS_HOUSES_PARAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="CHANGEIDEND" ColumnName="CHANGEIDEND" />
+                <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_MUN_HIERARCHY">
+            <EntityTypeMapping TypeName="GARModel.AS_MUN_HIERARCHY">
+              <MappingFragment StoreEntitySet="AS_MUN_HIERARCHY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="PARENTOBJID" ColumnName="PARENTOBJID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="OKTMO" ColumnName="OKTMO" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="PATH" ColumnName="PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_NORMATIVE_DOCS_KINDS">
+            <EntityTypeMapping TypeName="GARModel.AS_NORMATIVE_DOCS_KINDS">
+              <MappingFragment StoreEntitySet="AS_NORMATIVE_DOCS_KINDS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_NORMATIVE_DOCS_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_NORMATIVE_DOCS_TYPES">
+              <MappingFragment StoreEntitySet="AS_NORMATIVE_DOCS_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_OBJECT_LEVELS">
+            <EntityTypeMapping TypeName="GARModel.AS_OBJECT_LEVELS">
+              <MappingFragment StoreEntitySet="AS_OBJECT_LEVELS">
+                <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_OPERATION_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_OPERATION_TYPES">
+              <MappingFragment StoreEntitySet="AS_OPERATION_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_PARAM_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_PARAM_TYPES">
+              <MappingFragment StoreEntitySet="AS_PARAM_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ROOM_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_ROOM_TYPES">
+              <MappingFragment StoreEntitySet="AS_ROOM_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ROOMS">
+            <EntityTypeMapping TypeName="GARModel.AS_ROOMS">
+              <MappingFragment StoreEntitySet="AS_ROOMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="OBJECTGUID" ColumnName="OBJECTGUID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="ROOMTYPE" ColumnName="ROOMTYPE" />
+                <ScalarProperty Name="OPERTYPEID" ColumnName="OPERTYPEID" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTUAL" ColumnName="ISACTUAL" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_ROOMS_PARAMS">
+            <EntityTypeMapping TypeName="GARModel.AS_ROOMS_PARAMS">
+              <MappingFragment StoreEntitySet="AS_ROOMS_PARAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="CHANGEIDEND" ColumnName="CHANGEIDEND" />
+                <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_STEADS">
+            <EntityTypeMapping TypeName="GARModel.AS_STEADS">
+              <MappingFragment StoreEntitySet="AS_STEADS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="OBJECTGUID" ColumnName="OBJECTGUID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="OPERTYPEID" ColumnName="OPERTYPEID" />
+                <ScalarProperty Name="PREVID" ColumnName="PREVID" />
+                <ScalarProperty Name="NEXTID" ColumnName="NEXTID" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISACTUAL" ColumnName="ISACTUAL" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AS_STEADS_PARAMS">
+            <EntityTypeMapping TypeName="GARModel.AS_STEADS_PARAMS">
+              <MappingFragment StoreEntitySet="AS_STEADS_PARAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OBJECTID" ColumnName="OBJECTID" />
+                <ScalarProperty Name="CHANGEID" ColumnName="CHANGEID" />
+                <ScalarProperty Name="CHANGEIDEND" ColumnName="CHANGEIDEND" />
+                <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GettingAnAddress" FunctionName="Хранилище GARModel.GettingAnAddress" />
+          <EntitySetMapping Name="AS_ADDHOUSE_TYPES">
+            <EntityTypeMapping TypeName="GARModel.AS_ADDHOUSE_TYPES">
+              <MappingFragment StoreEntitySet="AS_ADDHOUSE_TYPES">
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

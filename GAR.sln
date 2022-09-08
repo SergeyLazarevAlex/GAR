@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAR.BL", "GAR.BL\GAR.BL.csproj", "{76E742CD-F55A-4995-B677-B4606F3FB867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAR.CMD", "GAR.CMD\GAR.CMD.csproj", "{3FBA701D-B373-4A9E-AE15-03F310B5984B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76E742CD-F55A-4995-B677-B4606F3FB867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E742CD-F55A-4995-B677-B4606F3FB867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E742CD-F55A-4995-B677-B4606F3FB867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E742CD-F55A-4995-B677-B4606F3FB867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FBA701D-B373-4A9E-AE15-03F310B5984B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FBA701D-B373-4A9E-AE15-03F310B5984B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FBA701D-B373-4A9E-AE15-03F310B5984B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FBA701D-B373-4A9E-AE15-03F310B5984B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B78FFFBF-BD9B-4144-A038-59053B216330}
+	EndGlobalSection
+EndGlobal

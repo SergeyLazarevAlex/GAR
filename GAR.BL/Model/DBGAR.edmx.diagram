@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ee9f8e091ab423aa6307cc049d2b6c2" Name="Diagram1">
+        <EntityTypeShape EntityType="GARModel.AS_ADDR_OBJ" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ADDR_OBJ_DIVISION" Width="1.5" PointX="2.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ADDR_OBJ_PARAMS" Width="1.5" PointX="11.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ADDR_OBJ_TYPES" Width="1.5" PointX="3.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ADM_HIERARCHY" Width="1.5" PointX="0.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_APARTMENT_TYPES" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_APARTMENTS" Width="1.5" PointX="2.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_APARTMENTS_PARAMS" Width="1.5" PointX="10.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_CARPLACES" Width="1.5" PointX="7" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_CARPLACES_PARAMS" Width="1.5" PointX="3.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_HOUSE_TYPES" Width="1.5" PointX="11.875" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_HOUSES" Width="1.5" PointX="0.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_HOUSES_PARAMS" Width="1.5" PointX="2.125" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_MUN_HIERARCHY" Width="1.5" PointX="3.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_NORMATIVE_DOCS_KINDS" Width="1.5" PointX="8.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_NORMATIVE_DOCS_TYPES" Width="1.5" PointX="5.375" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_OBJECT_LEVELS" Width="1.5" PointX="7" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_OPERATION_TYPES" Width="1.5" PointX="5.375" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_PARAM_TYPES" Width="1.5" PointX="10.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ROOM_TYPES" Width="1.5" PointX="8.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ROOMS" Width="1.5" PointX="7" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ROOMS_PARAMS" Width="1.5" PointX="8.625" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_STEADS" Width="1.5" PointX="10.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_STEADS_PARAMS" Width="1.5" PointX="11.875" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GARModel.AS_ADDHOUSE_TYPES" Width="1.5" PointX="0.5" PointY="13.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

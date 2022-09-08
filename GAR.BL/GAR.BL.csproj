@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76E742CD-F55A-4995-B677-B4606F3FB867}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GAR.BL</RootNamespace>
+    <AssemblyName>GAR.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controler\DBControler.cs" />
+    <Compile Include="Model\AS_ADDHOUSE_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ADDR_OBJ.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ADDR_OBJ_DIVISION.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ADDR_OBJ_PARAMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ADDR_OBJ_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ADM_HIERARCHY.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_APARTMENTS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_APARTMENTS_PARAMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_APARTMENT_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_CARPLACES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_CARPLACES_PARAMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_HOUSES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_HOUSES_PARAMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_HOUSE_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_MUN_HIERARCHY.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_NORMATIVE_DOCS_KINDS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_NORMATIVE_DOCS_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_OBJECT_LEVELS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_OPERATION_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_PARAM_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ROOMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ROOMS_PARAMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_ROOM_TYPES.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_STEADS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AS_STEADS_PARAMS.cs">
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DBGAR.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBGAR.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DBGAR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBGAR.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DBGAR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBGAR.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model\DBGAR.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBGAR.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\DBGAR.edmx.diagram">
+      <DependentUpon>DBGAR.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\DBGAR.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBGAR.Context.cs</LastGenOutput>
+      <DependentUpon>DBGAR.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\DBGAR.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBGAR.edmx</DependentUpon>
+      <LastGenOutput>DBGAR.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
